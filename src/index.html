@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Lotus - Indian Cuisine Restaurant</title>
 </head>
 
@@ -11,28 +12,44 @@
     <section>
         <header>
             <div class="logo">
-                <img class="logo-img" src="favicon.svg" alt="Restaurant logo">
-                <p class="logo-name-big">LOTUS</p>
-                <p class="logo-name-small">Indian Cusine</p>
-                <p class="logo-name-small">Restaurant</p>
+                <img class="logo-img" src="asset/img/logo.svg" alt="Restaurant logo">
+                <p class="logo-text text-big">LOTUS</p>
+                <p class="logo-text text-small">An Indian Cusine</p>
+                <p class="logo-text text-small">Restaurant</p>
             </div>
-            <ul class="nav-menu">
-                <li class="nav-list navHome">
-                    <label for="navHome">Home</label>
-                    <input type="radio" name="headNav" id="navHome">
-                </li>
-                <li class="nav-list navMenu">
-                    <label for="navMenu">Menu</label>
+            <div class="nav-menu">
+                <nav class="nav-list navHome">
+                    <input type="radio" name="headNav" id="navHome" checked>
+                    <label for="navHome" class="nav-text text-medium"> Home </label>
+                </nav>
+                <nav class="nav-list navMenu">
                     <input type="radio" name="headNav" id="navMenu">
-                </li>
-                <li class="nav-list navAbout">
-                    <label for="navAbout">About</label>
+                    <label for="navMenu" class="nav-text text-medium">Menu</label>
+                </nav>
+                <nav class="nav-list navAbout">
                     <input type="radio" name="headNav" id="navAbout">
-                </li>
-            </ul>
+                    <label for="navAbout" class="nav-text text-medium">About</label>
+                </nav>
+            </div>
             <div class="order-cart">
-                <img src="" alt="" class="order-cart-image">
-                <div class="order-count"></div>
+                <svg class="icon header-icon">
+                    <use href="./asset/icons.sprite.svg#basket"></use>
+                </svg>
+                <div class="order-count">1</div>
+                <div class="order-detail nodisplay">
+                    <div class="order-item">
+                        <img class="order-itemImg" src="./asset/img-disp/dosa-transformed_1.webp" alt="">
+                        <p class="order-itemTitle text-medium"> Masal Dosai </p>
+                        <p class="order-itemText text-small">
+                            <span class="order-itemTotalQty">x2</span> -
+                            <span class="order-itemTotalPrice text-small">$12.00</span>
+                        </p>
+                    </div>
+
+                    <hr>
+                    <p class="order-totalPrice"><span class="text-small">$</span><span
+                            class="text-medium">123</span>.<span class="text-small">00</span></p>
+                </div>
             </div>
         </header>
 
@@ -51,7 +68,7 @@
         </main>
 
         <!-- Menu -->
-        <main class="menu" style="display: none;">
+        <main class="menu nodisplay">
             <div class="menu-head">
                 <div class="heading-big">Today's Menu</div>
                 <div class="menu-nav">
@@ -75,7 +92,7 @@
         </main>
 
         <!-- About -->
-        <main class="about" style="display: none;">
+        <main class="about nodisplay">
             <div class="about-left">
                 <div class="heading-big">About</div>
                 <p>lorem Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae harum distinctio error esse
@@ -97,7 +114,13 @@
         </main>
     </section>
     <footer>
-        Made with :3 by Mahmood Athil <a href=""><img class="footer-image" src="" alt=""></a> No Rights Reserved - 2022
+        Made with <code>HTML | CSS | JS</code> by Athil <a href=""><svg class="icon footer-icon">
+                <use href="./asset/icons.sprite.svg#github"></use>
+            </svg></a> No
+        Rights
+        Reserved
+        |
+        2022
     </footer>
 
 </body>
