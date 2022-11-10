@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&display=swap');
 
-* {
+/* * {
     outline: 1px solid red;
-}
+} */
 
 :root {
 
@@ -18,6 +18,10 @@
 
     --color-text-primary: 238, 182, 9;
     --color-text-secondary: 255, 255, 252;
+
+    --display-morning: 126, 143, 227;
+    --display-afternoon: 255, 180, 2;
+    --display-night: 120, 33, 87;
 }
 
 @font-face {
@@ -35,6 +39,8 @@ body {
 
     color: rgb(var(--color-text-secondary));
     background-color: rgb(var(--color-secondary-1));
+
+    /* overflow: hidden; */
 
 }
 
@@ -57,13 +63,14 @@ body::after {
 }
 
 section {
-    height: 100%;
+    height: 94%;
+    width: 100%;
     display: flex;
 }
 
 header {
     width: 10%;
-    height: 95.5%;
+    /* height: 95.5%; */
 
     padding: 1rem;
     margin: 0rem .5rem;
@@ -80,10 +87,12 @@ header {
 
     z-index: 10;
 
+    position: relative;
+
 }
 
 footer {
-    height: 4%;
+    height: 6%;
     width: 100%;
 
     display: flex;
@@ -98,7 +107,44 @@ footer {
 
 input {
     appearance: none;
+}
+
+input[type="radio"] {
     display: none;
+}
+
+button {
+    border-radius: .25rem;
+    height: 2.5rem;
+
+    font-family: 'Maron Rose';
+    font-size: 1.2rem;
+
+    padding: .5rem .95rem;
+
+    color: rgb(var(--color-text-primary));
+    background-color: rgb(var(--color-primary-2));
+
+    outline: none;
+    border: .125rem solid rgb(var(--color-text-primary));
+}
+
+button:hover {
+    background-color: rgb(var(--color-primary-1));
+}
+
+button.button-big-nohi {
+    color: rgb(var(--color-text-primary));
+    background-color: rgb(var(--color-secondary-1));
+
+    outline: none;
+    border: .125rem solid rgb(var(--color-text-secondary));
+}
+
+button.button-big-nohi:hover {
+    color: rgb(var(--color-text-secondary));
+
+    background-color: rgba(var(--color-text-primary), .75);
 }
 
 img {
@@ -130,11 +176,6 @@ svg.icon {
     /* margin: .25rem; */
 }
 
-button {
-    outline: none;
-    border: none;
-}
-
 /* SECTION Header */
 
 .logo-text {
@@ -142,6 +183,10 @@ button {
 
     font-family: 'Maron Rose';
 }
+
+/* header input {
+    display: none;
+} */
 
 .nav-menu {
     display: flex;
@@ -219,15 +264,16 @@ div.order-count {
 
 div.order-detail {
     position: absolute;
-    left: 5.95rem;
-    bottom: -.5rem;
+    right: -275px;
+    bottom: 10px;
 
-    width: 13rem;
+    width: max(17%, 15rem);
     height: max-content;
 
     padding: .5rem;
 
     border-radius: .25rem;
+    border-bottom-left-radius: 4rem;
 
     background-color: rgb(var(--color-text-primary));
     color: rgb(var(--color-primary-2));
@@ -269,17 +315,17 @@ div.order-detail>.order-item {
 }
 
 .order-item>p.order-itemTitle {
-
     grid-area: title;
     overflow: hidden;
+
+    font-weight: 800;
 }
 
 .order-item>p.order-itemText {
     grid-area: text;
 }
 
-.order-item>p.order-itemTotalPrice {
-    grid-area: tprice;
+.order-item span.order-itemTotalPrice {
     font-weight: 800;
 }
 
@@ -298,6 +344,8 @@ div.order-detail>.order-totalPrice {
     justify-content: flex-end;
     align-items: baseline;
     gap: .05rem;
+
+    font-weight: 800;
 
     margin: 0rem;
     padding-right: .75rem;

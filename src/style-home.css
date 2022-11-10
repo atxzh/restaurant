@@ -1,0 +1,260 @@
+main.home {
+    width: 90%;
+
+    display: flex;
+
+    background-color: rgba(var(--color-secondary-2), .45);
+
+    border-bottom-left-radius: 4rem;
+
+    padding-left: 1rem;
+
+}
+
+/* SECTION Home Left */
+
+main.home>.home-left {
+    width: 60%;
+
+    padding: 0rem .25rem 0rem 1rem;
+
+    align-self: center;
+
+    font-family: 'Maron Rose';
+
+    z-index: 6;
+}
+
+div.home-request {
+    margin-top: 2rem;
+    margin-right: 4rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 2rem;
+
+}
+
+/* END !SECTION Home Left */
+
+/* SECTION Home Right */
+
+main.home>.home-right {
+    width: 40%;
+
+    border-bottom-left-radius: 4rem;
+
+    align-items: stretch;
+
+    position: relative;
+}
+
+/* SECTION Request Reserve Table */
+
+main.home>.home-right>div.request-menu {
+    /* height: 50%; */
+    width: 100%;
+
+    background-color: rgba(var(--color-primary-2), .85);
+    color: rgb(var(--color-text-primary));
+
+    position: absolute;
+
+    padding: 1.25rem;
+
+    z-index: 8;
+
+    border-bottom-left-radius: 4rem;
+
+    box-sizing: border-box;
+
+    display: flex;
+    flex-flow: column;
+
+}
+
+div.request-menu div.home-request-text {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: .5rem 0rem 0rem;
+
+    font-family: 'Maron Rose';
+}
+
+div.request-menu label {
+    font-size: .9rem;
+    margin: .25rem 0rem;
+    font-weight: lighter;
+}
+
+div.request-menu input.input-text {
+    /* height: 2rem; */
+    border: none;
+    border-radius: .25rem;
+
+    padding: .65rem;
+
+    font-family: 'Maron Rose';
+}
+
+div.request-menu input.input-text:focus {
+    outline: none;
+}
+
+div.request-menu [class^="home-request-"] {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+
+    margin-bottom: 1rem;
+}
+
+div.request-menu .input-request {
+    display: flex;
+    flex-flow: column nowrap;
+
+    width: 50%;
+
+    position: relative;
+}
+
+div.request-menu .input-request>input:not([type="date"])+span {
+    position: absolute;
+    bottom: 10%;
+    right: 2%;
+
+    width: 1.5rem;
+    height: 1.5rem;
+
+    border-radius: .25rem;
+
+}
+
+div.request-menu .input-request>input:valid:not([type="date"])+span {
+
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M21.05 29 16 23.9q-.35-.3-.825-.3t-.825.35q-.4.35-.4.85t.4.8l5.75 5.75q.4.45.975.45t.975-.45l11.6-11.6q.3-.3.275-.775-.025-.475-.325-.825-.35-.35-.85-.35t-.85.35ZM24 42.85q-3.95 0-7.4-1.45t-6-4q-2.55-2.55-4-6-1.45-3.45-1.45-7.4t1.45-7.4q1.45-3.45 4-6t6-4q3.45-1.45 7.4-1.45t7.4 1.45q3.45 1.45 6 4t4 6q1.45 3.45 1.45 7.4t-1.45 7.4q-1.45 3.45-4 6t-6 4q-3.45 1.45-7.4 1.45ZM24 24Zm0 16.65q7.05 0 11.85-4.8T40.65 24q0-7.05-4.8-11.85T24 7.35q-7.05 0-11.85 4.8T7.35 24q0 7.05 4.8 11.85T24 40.65Z"></path></svg>');
+
+    filter: invert(24%) sepia(15%) saturate(3103%) hue-rotate(81deg) brightness(93%) contrast(95%);
+}
+
+/* div.request-menu .input-request>input:not([type="date"])+span {
+
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M15.85 32.15q.3.35.75.35t.8-.35l6.6-6.6 6.65 6.65q.3.3.75.275.45-.025.75-.325.35-.3.35-.75t-.35-.8l-6.6-6.6 6.65-6.65q.3-.3.275-.75-.025-.45-.325-.75-.3-.35-.75-.35t-.8.35l-6.6 6.6-6.65-6.65q-.3-.3-.75-.275-.45.025-.75.325-.35.3-.35.75t.35.8l6.6 6.6-6.65 6.65q-.3.3-.275.75.025.45.325.75ZM24 42.85q-4 0-7.425-1.45t-5.975-4q-2.55-2.55-4-5.975Q5.15 28 5.15 24q0-3.95 1.45-7.4t4-6q2.55-2.55 5.975-4Q20 5.15 24 5.15q3.95 0 7.4 1.45t6 4q2.55 2.55 4 5.975Q42.85 20 42.85 24t-1.45 7.425q-1.45 3.425-4 5.975t-5.975 4Q28 42.85 24 42.85ZM24 24Zm0 16.65q6.85 0 11.75-4.875T40.65 24q0-6.85-4.9-11.75T24 7.35q-6.9 0-11.775 4.9T7.35 24q0 6.9 4.875 11.775T24 40.65Z"></svg>');
+
+    filter: invert(49%) sepia(35%) saturate(4372%) hue-rotate(323deg) brightness(92%) contrast(86%);
+} */
+
+/* SECTION Time Slots */
+
+div.request-menu .home-request-time {
+    display: grid;
+    grid-template-columns: repeat(3, 5rem);
+    grid-template-areas: "morning afternoon night"
+        "slot slot slot";
+    justify-content: space-evenly;
+    justify-items: center;
+    gap: .1rem;
+}
+
+input#morning+label {
+    grid-area: morning;
+    background-color: rgba(var(--display-morning), .75);
+}
+
+input#morning:checked+label,
+input#morning+label:hover {
+    background-color: rgba(var(--display-morning));
+}
+
+input#afternoon+label {
+    grid-area: afternoon;
+    background-color: rgba(var(--display-afternoon), .75);
+}
+
+input#afternoon:checked+label,
+input#afternoon+label:hover {
+    background-color: rgba(var(--display-afternoon));
+}
+
+input#night+label {
+    grid-area: night;
+    background-color: rgba(var(--display-night), .75);
+}
+
+input#night:checked+label,
+input#night+label:hover {
+    background-color: rgba(var(--display-night));
+}
+
+input.request-time-head+label {
+    width: 4rem;
+    height: 1.75rem;
+    text-align: center;
+
+    padding: .65rem .5rem .15rem;
+
+    border: .15rem solid rgb(var(--color-secondary-1));
+    border-radius: .35rem;
+
+    color: rgb(var(--color-secondary-1));
+}
+
+div.time-slot {
+    grid-area: slot;
+    justify-self: stretch;
+
+    display: none;
+    justify-content: space-between;
+}
+
+div.time-slot label {
+    width: 2rem;
+    text-align: center;
+
+    padding: .25rem .5rem .15rem;
+    background-color: rgba(var(--color-primary-2), .45);
+
+    border: .15rem solid rgb(var(--color-text-primary));
+    border-radius: .35rem;
+}
+
+div.time-slot label:hover,
+div.time-slot input:checked+label {
+    background-color: rgba(var(--color-primary-1));
+}
+
+input.request-time-head#morning:checked~.time-slot-morning {
+    display: flex
+}
+
+input.request-time-head#afternoon:checked~.time-slot-afternoon {
+    display: flex
+}
+
+input.request-time-head#night:checked~.time-slot-night {
+    display: flex
+}
+
+/* END !SECTION Time Slots */
+
+div.request-menu button {
+    align-self: flex-end;
+}
+
+/* END !SECTION Request Reserve Table */
+
+main.home img.home-right {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 2;
+
+    border-bottom-left-radius: 4rem;
+}
+
+/* SECTION Home Right */
