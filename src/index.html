@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="style-home.css">
+    <link rel="stylesheet" href="style-menu.css">
     <title>Lotus - Indian Cuisine Restaurant</title>
 </head>
 
@@ -46,16 +47,41 @@
                         <span class="order-itemTotalQty">x2</span> -
                         <span class="order-itemTotalPrice text-small">$12.00</span>
                     </p>
+                    <div class="order-itemButtons">
+                        <svg class="icon side-icon">
+                            <use href="./asset/icons.sprite.svg#addBox"></use>
+                        </svg>
+                        <svg class="icon side-icon">
+                            <use href="./asset/icons.sprite.svg#remove"></use>
+                        </svg>
+                    </div>
+                </div>
+                <div class="order-item">
+                    <img class="order-itemImg" src="./asset/img-disp/dosa-transformed_1.webp" alt="">
+                    <p class="order-itemTitle text-medium"> Masal Dosai </p>
+                    <p class="order-itemText text-small">
+                        <span class="order-itemTotalQty">x2</span> -
+                        <span class="order-itemTotalPrice text-small">$12.00</span>
+                    </p>
+                    <div class="order-itemButtons">
+                        <svg class="icon side-icon">
+                            <use href="./asset/icons.sprite.svg#addBox"></use>
+                        </svg>
+                        <svg class="icon side-icon">
+                            <use href="./asset/icons.sprite.svg#remove"></use>
+                        </svg>
+                    </div>
                 </div>
 
                 <hr>
+
                 <p class="order-totalPrice"><span class="text-small">$</span><span class="text-medium">123</span>.<span
                         class="text-small">00</span></p>
             </div>
         </header>
 
         <!-- Home -->
-        <main class="home">
+        <main class="home nodisplay">
             <div class="home-left">
                 <p class="home-text-big text-big">Relish the Indian Spices - Spices favoured from all around the world -
                     in your
@@ -168,26 +194,223 @@
         </main>
 
         <!-- Menu -->
-        <main class="menu nodisplay">
-            <div class="menu-head">
-                <div class="heading-big">Today's Menu</div>
-                <div class="menu-nav">
-                    <nav class="tab tab-breakfast">Breakfast</nav>
-                    <nav class="tab tab-lunch">Lunch</nav>
-                    <nav class="tab tab-dinner">Dinner</nav>
-                    <nav class="tab tab-complimentary">Complimentary</nav>
-                </div>
+        <main class="menu">
+            <div class="menu-heading">
+                <svg class="icon title-icon">
+                    <use href="./asset/icons.sprite.svg#menu"></use>
+                </svg>
+                <p class="menu-title">Menu</p>
             </div>
-            <div class="tab-window grid">
-                <div class="grid-item">
-                    <img src="" alt="" class="grid-item item-image">
-                    <button class="item-button button-small button-small info"></button>
-                    <div class="item-sideInfo">
-                        <p class="item-title">Title</p>
-                        <p class="item-price">$12</p>
+            <div class="menu-slides">
+                <input type="radio" name="main-nav" id="appetizer" checked>
+                <label for="appetizer" class="tab tab-appetizer">Appetizer</label>
+                <div class="tab-appetizer-window grid-vertical">
+
+                    <div class="grid-item">
+                        <img src="./asset/img-disp/biriyani_1.webp" alt="" class="item-image">
+                        <div class="item-image-fg"></div>
+
+                        <div class="item-sideInfo">
+                            <p class="item-title">Biriyani</p>
+                            <p class="item-price text-small">$ 12</p>
+                        </div>
+                        <button class="item-button button-small orderNow"><svg class="icon icon-button">
+                                <use href="./asset/icons.sprite.svg#addBox"></use>
+                            </svg> </button>
                     </div>
-                    <button class="item-button button-small orderNow"></button>
+
                 </div>
+
+                <input type="radio" name="main-nav" id="dish">
+                <label for="dish" class="tab tab-dish">Dishes</label>
+                <div class="tab-dish-window grid-vertical">
+
+                    <input type="radio" name="main-nav-dish" id="dishVeg" checked>
+                    <label for="dishVeg" class="tab tab-dishVeg">Veg Dishes</label>
+                    <div class="tab-dishVeg-window grid-horizontal">
+
+
+                        <div class="grid-item">
+                            <img src="./asset/img-disp/biriyani_1.webp" alt="" class="item-image">
+                            <div class="item-image-fg"></div>
+
+                            <div class="item-sideInfo">
+                                <p class="item-title">Biriyani</p>
+                                <p class="item-price text-small">$ 12</p>
+                            </div>
+                            <button class="item-button button-small orderNow"><svg class="icon icon-button">
+                                    <use href="./asset/icons.sprite.svg#addBox"></use>
+                                </svg> </button>
+                        </div>
+
+                    </div>
+
+                    <input type="radio" name="main-nav-dish" id="dishBeef">
+                    <label for="dishBeef" class="tab tab-dishBeef">Beef Dishes</label>
+                    <div class="tab-dishBeef-window grid-horizontal">
+
+                        <div class="grid-item">
+                            <img src="./asset/img-disp/biriyani_1.webp" alt="" class="item-image">
+                            <div class="item-image-fg"></div>
+
+                            <div class="item-sideInfo">
+                                <p class="item-title">Biriyani</p>
+                                <p class="item-price text-small">$ 12</p>
+                            </div>
+                            <button class="item-button button-small orderNow"><svg class="icon icon-button">
+                                    <use href="./asset/icons.sprite.svg#addBox"></use>
+                                </svg> </button>
+                        </div>
+
+                    </div>
+
+                    <input type="radio" name="main-nav-dish" id="dishLamb">
+                    <label for="dishLamb" class="tab tab-dishLamb">Lamb Dishes</label>
+                    <div class="tab-dishLamb-window grid-horizontal">
+
+                        <div class="grid-item">
+                            <img src="./asset/img-disp/biriyani_1.webp" alt="" class="item-image">
+                            <div class="item-image-fg"></div>
+
+                            <div class="item-sideInfo">
+                                <p class="item-title">Biriyani</p>
+                                <p class="item-price text-small">$ 12</p>
+                            </div>
+                            <button class="item-button button-small orderNow"><svg class="icon icon-button">
+                                    <use href="./asset/icons.sprite.svg#addBox"></use>
+                                </svg> </button>
+                        </div>
+
+                    </div>
+
+                    <input type="radio" name="main-nav-dish" id="dishSea">
+                    <label for="dishSea" class="tab tab-dishSea">Sea Food Dishes</label>
+                    <div class="tab-dishSea-window grid-horizontal">
+
+                        <div class="grid-item">
+                            <img src="./asset/img-disp/biriyani_1.webp" alt="" class="item-image">
+                            <div class="item-image-fg"></div>
+
+                            <div class="item-sideInfo">
+                                <p class="item-title">Biriyani</p>
+                                <p class="item-price text-small">$ 12</p>
+                            </div>
+                            <button class="item-button button-small orderNow"><svg class="icon icon-button">
+                                    <use href="./asset/icons.sprite.svg#addBox"></use>
+                                </svg> </button>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <input type="radio" name="main-nav" id="mc">
+                <label for="mc" class="tab tab-mc">Main Course</label>
+                <div class="tab-mc-window grid-vertical">
+
+                    <input type="radio" name="main-nav-mc" id="mcBiriyani" checked>
+                    <label for="mcBiriyani" class="tab tab-mcBiriyani">Biriyani</label>
+                    <div class="tab-mcBiriyani-window grid-horizontal">
+
+                        <div class="grid-item">
+                            <img src="./asset/img-disp/biriyani_1.webp" alt="" class="item-image">
+                            <div class="item-image-fg"></div>
+
+                            <div class="item-sideInfo">
+                                <p class="item-title">Biriyani</p>
+                                <p class="item-price text-small">$ 12</p>
+                            </div>
+                            <button class="item-button button-small orderNow"><svg class="icon icon-button">
+                                    <use href="./asset/icons.sprite.svg#addBox"></use>
+                                </svg> </button>
+                        </div>
+
+                    </div>
+
+                    <input type="radio" name="main-nav-mc" id="mcTandoori">
+                    <label for="mcTandoori" class="tab tab-mcTandoori">Tandoori</label>
+                    <div class="tab-mcTandoori-window grid-horizontal">
+
+                        <div class="grid-item">
+                            <img src="./asset/img-disp/biriyani_1.webp" alt="" class="item-image">
+                            <div class="item-image-fg"></div>
+
+                            <div class="item-sideInfo">
+                                <p class="item-title">Biriyani</p>
+                                <p class="item-price text-small">$ 12</p>
+                            </div>
+                            <button class="item-button button-small orderNow"><svg class="icon icon-button">
+                                    <use href="./asset/icons.sprite.svg#addBox"></use>
+                                </svg> </button>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <input type="radio" name="main-nav" id="comp">
+                <label for="comp" class="tab tab-comp">Complimentary</label>
+                <div class="tab-comp-window grid-vertical">
+
+                    <input type="radio" name="main-nav-comp" id="compBread" checked>
+                    <label for="compBread" class="tab tab-compBread">Sides & Bread</label>
+                    <div class="tab-compBread-window grid-horizontal">
+
+                        <div class="grid-item">
+                            <img src="./asset/img-disp/biriyani_1.webp" alt="" class="item-image">
+                            <div class="item-image-fg"></div>
+
+                            <div class="item-sideInfo">
+                                <p class="item-title">Biriyani</p>
+                                <p class="item-price text-small">$ 12</p>
+                            </div>
+                            <button class="item-button button-small orderNow"><svg class="icon icon-button">
+                                    <use href="./asset/icons.sprite.svg#addBox"></use>
+                                </svg> </button>
+                        </div>
+
+                    </div>
+
+                    <input type="radio" name="main-nav-comp" id="compBev">
+                    <label for="compBev" class="tab tab-compBev">Beverages</label>
+                    <div class="tab-compBev-window grid-horizontal">
+
+                        <div class="grid-item">
+                            <img src="./asset/img-disp/biriyani_1.webp" alt="" class="item-image">
+                            <div class="item-image-fg"></div>
+
+                            <div class="item-sideInfo">
+                                <p class="item-title">Biriyani</p>
+                                <p class="item-price text-small">$ 12</p>
+                            </div>
+                            <button class="item-button button-small orderNow"><svg class="icon icon-button">
+                                    <use href="./asset/icons.sprite.svg#addBox"></use>
+                                </svg> </button>
+                        </div>
+
+                    </div>
+
+                    <input type="radio" name="main-nav-comp" id="compDes">
+                    <label for="compDes" class="tab tab-compDes">Desserts</label>
+                    <div class="tab-compDes-window grid-horizontal">
+
+                        <div class="grid-item">
+                            <img src="./asset/img-disp/biriyani_1.webp" alt="" class="item-image">
+                            <div class="item-image-fg"></div>
+
+                            <div class="item-sideInfo">
+                                <p class="item-title">Biriyani</p>
+                                <p class="item-price text-small">$ 12</p>
+                            </div>
+                            <button class="item-button button-small orderNow"><svg class="icon icon-button">
+                                    <use href="./asset/icons.sprite.svg#addBox"></use>
+                                </svg> </button>
+                        </div>
+
+                    </div>
+
+                </div>
+
             </div>
         </main>
 
