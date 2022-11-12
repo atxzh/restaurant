@@ -78,6 +78,7 @@ main.home>.home-right>div.request-menu {
 
     display: none;
     flex-flow: column;
+    justify-content: center;
 
     overflow: auto;
 
@@ -122,6 +123,12 @@ div.request-menu [class^="home-request-"] {
     gap: 2rem;
 
     margin-bottom: 1rem;
+}
+
+div.request-menu .home-request-name,
+div.request-menu .home-request-info,
+div.request-menu .home-request-time {
+    justify-content: center;
 }
 
 .input-request>label {
