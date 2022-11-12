@@ -1,13 +1,19 @@
 main.home {
     width: 90%;
 
-    display: flex;
+    display: none;
 
     background-color: rgba(var(--color-secondary-2), .45);
 
     border-bottom-left-radius: 4rem;
 
     padding-left: 1rem;
+
+    --display-morning: 225, 143, 227;
+    --display-afternoon: 255, 180, 2;
+    --display-night: 225, 28, 54;
+
+    overflow: hidden;
 
 }
 
@@ -36,6 +42,7 @@ div.home-request {
 
 }
 
+
 /* END !SECTION Home Left */
 
 /* SECTION Home Right */
@@ -53,7 +60,7 @@ main.home>.home-right {
 /* SECTION Request Reserve Table */
 
 main.home>.home-right>div.request-menu {
-    /* height: 50%; */
+    height: 100%;
     width: 100%;
 
     background-color: rgba(var(--color-primary-2), .85);
@@ -61,7 +68,7 @@ main.home>.home-right>div.request-menu {
 
     position: absolute;
 
-    padding: 1.25rem;
+    padding: 1rem 1.25rem;
 
     z-index: 8;
 
@@ -69,9 +76,15 @@ main.home>.home-right>div.request-menu {
 
     box-sizing: border-box;
 
-    display: flex;
+    display: none;
     flex-flow: column;
 
+    overflow: auto;
+
+}
+
+div.home-left:has(>div.home-request>input#tableReserve:checked)+div.home-right>div.request-menu {
+    display: flex;
 }
 
 div.request-menu div.home-request-text {
@@ -105,16 +118,21 @@ div.request-menu input.input-text:focus {
 div.request-menu [class^="home-request-"] {
     display: flex;
     align-items: flex-start;
+    flex-wrap: wrap;
     gap: 2rem;
 
     margin-bottom: 1rem;
+}
+
+.input-request>label {
+    cursor: default;
 }
 
 div.request-menu .input-request {
     display: flex;
     flex-flow: column nowrap;
 
-    width: 50%;
+    width: max(45%, 5rem);
 
     position: relative;
 }
@@ -138,12 +156,12 @@ div.request-menu .input-request>input:valid:not([type="date"])+span {
     filter: invert(24%) sepia(15%) saturate(3103%) hue-rotate(81deg) brightness(93%) contrast(95%);
 }
 
-/* div.request-menu .input-request>input:not([type="date"])+span {
+div.request-menu .input-request>input:focus:invalid:not([type="date"])+span {
 
     background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M15.85 32.15q.3.35.75.35t.8-.35l6.6-6.6 6.65 6.65q.3.3.75.275.45-.025.75-.325.35-.3.35-.75t-.35-.8l-6.6-6.6 6.65-6.65q.3-.3.275-.75-.025-.45-.325-.75-.3-.35-.75-.35t-.8.35l-6.6 6.6-6.65-6.65q-.3-.3-.75-.275-.45.025-.75.325-.35.3-.35.75t.35.8l6.6 6.6-6.65 6.65q-.3.3-.275.75.025.45.325.75ZM24 42.85q-4 0-7.425-1.45t-5.975-4q-2.55-2.55-4-5.975Q5.15 28 5.15 24q0-3.95 1.45-7.4t4-6q2.55-2.55 5.975-4Q20 5.15 24 5.15q3.95 0 7.4 1.45t6 4q2.55 2.55 4 5.975Q42.85 20 42.85 24t-1.45 7.425q-1.45 3.425-4 5.975t-5.975 4Q28 42.85 24 42.85ZM24 24Zm0 16.65q6.85 0 11.75-4.875T40.65 24q0-6.85-4.9-11.75T24 7.35q-6.9 0-11.775 4.9T7.35 24q0 6.9 4.875 11.775T24 40.65Z"></svg>');
 
     filter: invert(49%) sepia(35%) saturate(4372%) hue-rotate(323deg) brightness(92%) contrast(86%);
-} */
+}
 
 /* SECTION Time Slots */
 
@@ -159,36 +177,42 @@ div.request-menu .home-request-time {
 
 input#morning+label {
     grid-area: morning;
-    background-color: rgba(var(--display-morning), .75);
+    background-color: rgba(var(--display-morning), .45);
+    opacity: .5;
 }
 
 input#morning:checked+label,
 input#morning+label:hover {
     background-color: rgba(var(--display-morning));
+    opacity: 1;
 }
 
 input#afternoon+label {
     grid-area: afternoon;
-    background-color: rgba(var(--display-afternoon), .75);
+    background-color: rgba(var(--display-afternoon), .45);
+    opacity: .5;
 }
 
 input#afternoon:checked+label,
 input#afternoon+label:hover {
     background-color: rgba(var(--display-afternoon));
+    opacity: 1;
 }
 
 input#night+label {
     grid-area: night;
-    background-color: rgba(var(--display-night), .75);
+    background-color: rgba(var(--display-night), .45);
+    opacity: .5;
 }
 
 input#night:checked+label,
 input#night+label:hover {
     background-color: rgba(var(--display-night));
+    opacity: 1;
 }
 
 input.request-time-head+label {
-    width: 4rem;
+    width: 6rem;
     height: 1.75rem;
     text-align: center;
 
@@ -206,16 +230,18 @@ div.time-slot {
 
     display: none;
     justify-content: space-between;
+
+    margin-top: 1rem;
 }
 
 div.time-slot label {
-    width: 2rem;
+    width: 3rem;
     text-align: center;
 
-    padding: .25rem .5rem .15rem;
+    padding: .25rem .5rem .05rem;
     background-color: rgba(var(--color-primary-2), .45);
 
-    border: .15rem solid rgb(var(--color-text-primary));
+    border: .1rem solid rgb(var(--color-text-primary));
     border-radius: .35rem;
 }
 

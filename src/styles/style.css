@@ -19,15 +19,11 @@
     --color-text-primary: 238, 182, 9;
     --color-text-secondary: 255, 255, 252;
 
-    --display-morning: 126, 143, 227;
-    --display-afternoon: 255, 180, 2;
-    --display-night: 120, 33, 87;
-
 }
 
 @font-face {
     font-family: 'Maron Rose';
-    src: url(./asset/font/MaronRose.ttf);
+    src: url(../asset/font/MaronRose.ttf);
 }
 
 body {
@@ -50,7 +46,7 @@ body::after {
 
     width: 100%;
 
-    background: url(./asset/img/back.svg) bottom -20rem left -5rem / 50rem no-repeat;
+    background: url(../asset/img/back.svg) bottom -20rem left -5rem / 50rem no-repeat;
 
     position: absolute;
     top: 0px;
@@ -118,14 +114,14 @@ label {
     cursor: pointer;
 }
 
-button {
+.button-big {
     border-radius: .25rem;
-    height: 2.5rem;
+    /* height: 2.5rem; */
 
     font-family: 'Maron Rose';
     font-size: 1.2rem;
 
-    padding: .5rem .95rem;
+    padding: .5rem .95rem !important;
 
     color: rgb(var(--color-text-primary));
     background-color: rgb(var(--color-primary-2));
@@ -134,11 +130,11 @@ button {
     border: .125rem solid rgb(var(--color-text-primary));
 }
 
-button:hover {
+.button-big:hover {
     background-color: rgb(var(--color-primary-1));
 }
 
-button.button-big-nohi {
+.button-big.button-big-nohi {
     color: rgb(var(--color-text-primary));
     background-color: rgb(var(--color-secondary-1));
 
@@ -146,7 +142,7 @@ button.button-big-nohi {
     border: .125rem solid rgb(var(--color-text-secondary));
 }
 
-button.button-big-nohi:hover {
+.button-big.button-big-nohi:hover {
     color: rgb(var(--color-text-secondary));
 
     background-color: rgba(var(--color-text-primary), .75);
@@ -189,9 +185,8 @@ svg.icon {
     font-family: 'Maron Rose';
 }
 
-/* header input {
-    display: none;
-} */
+/* SECTION Nav */
+
 
 .nav-menu {
     display: flex;
@@ -223,6 +218,25 @@ svg.icon {
     color: rgb(var(--color-primary-1));
 }
 
+
+header:has(>.nav-menu>.navHome>input#navHome:checked)~main.home {
+    display: flex;
+}
+
+header:has(>.nav-menu>.navMenu>input#navMenu:checked)~main.menu {
+    display: flex;
+}
+
+header:has(>.nav-menu>.navAbout>input#navAbout:checked)~main.about {
+    display: flex;
+}
+
+/* END !SECTION Nav */
+
+/* header input {
+    display: none;
+} */
+
 .order-cart {
     margin-top: auto;
 
@@ -239,14 +253,14 @@ svg.icon {
     position: relative;
 }
 
-.order-cart>svg.icon {
+.order-cart>label>svg.icon {
     width: 2rem;
     height: 2rem;
 
     fill: rgb(var(--color-text-secondary));
 }
 
-.order-cart>svg.icon:hover {
+.order-cart>label>svg.icon:hover {
     fill: rgb(var(--color-text-primary));
 }
 
@@ -283,9 +297,13 @@ div.order-detail {
     background-color: rgb(var(--color-primary-2));
     color: rgb(var(--color-secondary-2));
 
-    display: flex;
+    display: none;
     flex-flow: column nowrap;
     gap: .25rem;
+}
+
+div.order-cart:has(>input#orderCart:checked)+div.order-detail {
+    display: flex;
 }
 
 /* SECTION Order Detail Item */

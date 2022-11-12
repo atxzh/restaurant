@@ -2,7 +2,7 @@ main.about {
     width: 90%;
     height: 100%;
 
-    display: flex;
+    display: none;
 
     background-color: rgba(var(--color-secondary-2), .45);
 
@@ -63,14 +63,16 @@ main.about>div.about-info {
 main.about>div.about-info>div.about-left {
     width: 54%;
 
-    font-size: 1.5rem;
+    font-size: 1.25rem;
 
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
 
-    padding: 2rem;
+    padding: 0rem 2rem;
+
+    overflow-y: auto;
 
 }
 
@@ -120,6 +122,5 @@ main.about>div.about-info>div.about-right>address>a {
     text-decoration: none;
 
 }
-
 
 /* END !SECTION About Right */
