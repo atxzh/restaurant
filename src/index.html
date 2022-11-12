@@ -4,10 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="style-home.css">
-    <link rel="stylesheet" href="style-menu.css">
-    <link rel="stylesheet" href="style-about.css">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/style-home.css">
+    <link rel="stylesheet" href="./styles/style-menu.css">
+    <link rel="stylesheet" href="./styles/style-about.css">
+    <link rel="stylesheet" href="./styles/compatibility.css">
     <title>Lotus - Indian Cuisine Restaurant</title>
 </head>
 
@@ -35,12 +36,15 @@
                 </nav>
             </div>
             <div class="order-cart">
-                <svg class="icon header-icon">
-                    <use href="./asset/icons.sprite.svg#basket"></use>
-                </svg>
+                <input type="checkbox" name="order-cart" id="orderCart">
+                <label for="orderCart">
+                    <svg class="icon header-icon">
+                        <use href="./asset/icons.sprite.svg#basket"></use>
+                    </svg>
+                </label>
                 <div class="order-count">1</div>
             </div>
-            <div class="order-detail nodisplay">
+            <div class="order-detail">
                 <div class="order-item">
                     <img class="order-itemImg" src="./asset/img-disp/dosa-transformed_1.webp" alt="">
                     <p class="order-itemTitle text-medium"> Masal Dosai </p>
@@ -82,20 +86,23 @@
         </header>
 
         <!-- Home -->
-        <main class="home nodisplay">
+        <main class="home">
             <div class="home-left">
                 <p class="home-text-big text-big">Relish the Indian Spices - Spices favoured from all around the world -
                     in your
                     plate - flavoured with Tradition</p>
                 <div class="home-request">
-                    <button class="home-button-big button-big button-big-hi orderNow">Order Now</button>
+                    <input type="radio" name="orderortable" id="orderNow">
+                    <label for="orderNow" class="home-button-big button-big button-big-hi orderNow">Order Now</label>
                     <p class="home-text-small">or</p>
-                    <button class="home-button-big button-big button-big-nohi reserve">Reserve a Table</button>
+                    <input type="radio" name="orderortable" id="tableReserve">
+                    <label for="tableReserve" class="home-button-big button-big button-big-nohi reserve">Reserve a
+                        Table</label>
                 </div>
             </div>
             <div class="home-right">
 
-                <div class="request-menu nodisplay">
+                <div class="request-menu">
                     <div class="home-request-text">Personal Information</div>
                     <div class="home-request-name">
                         <div class="input-request">
@@ -185,9 +192,8 @@
                             <label for="time2100">21:00</label>
                         </div>
 
-
                     </div>
-                    <button type="submit">Submit</button>
+                    <button class="button-big button-big-nohi" type="submit">Submit</button>
                 </div>
 
                 <img class="home-right image-big" src="./asset/img-disp/biriyani_1.webp" alt="biriyani_1">
@@ -195,7 +201,7 @@
         </main>
 
         <!-- Menu -->
-        <main class="menu nodisplay">
+        <main class="menu">
             <div class="menu-heading">
                 <svg class="icon title-icon">
                     <use href="./asset/icons.sprite.svg#menu"></use>
@@ -461,6 +467,7 @@
         |
         2022
     </footer>
+    <script src="./compatibility.js"></script>
 
 </body>
 
