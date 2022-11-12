@@ -24,3 +24,9 @@
 ### Parent Selection
 
 1. Parent Selection can be done with CSS `:has` selector providing the path of the children inside it.
+
+## JavaScript
+
+### DOM
+
+1. Creating SVG needs to be created with `.createElementNS(namespaceurl, element)`
