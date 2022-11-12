@@ -16,3 +16,11 @@
 
 1. Grid `auto-fit` or `auto-fill` doesn't scroll.
     - Better to depend on `grid-auto-columns` or `grid-auto-rows`
+
+### Flex
+
+1. Flex's `justify-content:center` messes up with the scroll view
+
+### Parent Selection
+
+1. Parent Selection can be done with CSS `:has` selector providing the path of the children inside it.
