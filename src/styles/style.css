@@ -12,6 +12,7 @@
 
     --color-primary-1: 195, 20, 40;
     --color-primary-2: 131, 0, 0;
+    --color-primary-3: 117, 16, 6;
 
     --color-secondary-1: 21, 21, 20;
     --color-secondary-2: 10, 10, 10;
@@ -283,8 +284,8 @@ div.order-count {
 
 div.order-detail {
     position: absolute;
-    right: -275px;
-    bottom: 10px;
+    right: -276px;
+    bottom: 12px;
 
     width: max(17%, 15rem);
     height: max-content;
@@ -292,7 +293,7 @@ div.order-detail {
     padding: .5rem;
 
     border-radius: .25rem;
-    border-bottom-left-radius: 4rem;
+    border-bottom-left-radius: 3.5rem;
 
     background-color: rgb(var(--color-primary-2));
     color: rgb(var(--color-secondary-2));
@@ -312,7 +313,7 @@ div.order-detail>.order-item {
     width: 100%;
     height: auto;
 
-    margin: .25rem .5rem .65rem;
+    margin: .65rem .5rem .35rem;
 
     display: grid;
     grid-template-rows: repeat(2, 1fr);
@@ -381,6 +382,8 @@ div.order-detail>.order-item {
     align-items: center;
 }
 
+/* END !SECTION Order Detail Item */
+
 div.order-detail>hr {
     margin-top: .5rem;
     appearance: none;
@@ -390,6 +393,22 @@ div.order-detail>hr {
     border: 2px solid rgb(var(--color-text-primary));
     background-color: rgb(var(--color-text-primary));
     border-radius: 2rem;
+}
+
+div.order-detail>button {
+    align-self: flex-end;
+
+    width: 40%;
+    font-size: .8rem;
+
+    margin: -.45rem .4rem .4rem 0rem;
+
+    background-color: rgba(0, 0, 0, 0) !important;
+}
+
+div.order-detail>button:hover {
+    background-color: rgba(var(--color-secondary-1)) !important;
+    color: rgb(var(--color-text-primary)) !important;
 }
 
 div.order-detail>.order-totalPrice {
@@ -404,8 +423,6 @@ div.order-detail>.order-totalPrice {
     margin-bottom: .5rem;
     margin-right: .75rem;
 }
-
-/* END !SECTION Order Detail Item */
 
 /* END !SECTION Order Detail */
 
