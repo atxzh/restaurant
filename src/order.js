@@ -160,14 +160,23 @@ const orderCart = (function () {
             orderCount.textContent = Number(orderCount.textContent) + 1
 
             if (orderCount.textContent == 1) {
-                orderCount.style.setProperty('display', 'block')
+                orderCount.classList.remove('nodisplay')
+
+                document.querySelector('div.order-detail>div.no-order').classList.add('nodisplay')
+
+                document.querySelector('div.order-detail button.placeOrder').classList.remove('nodisplay')
             }
 
         } else {
             orderCount.textContent = Number(orderCount.textContent) - 1
 
-            if (orderCount.textContent == 0)
-                orderCount.style.setProperty('display', 'none')
+            if (orderCount.textContent == 0) {
+                orderCount.classList.add('nodisplay')
+
+                document.querySelector('div.order-detail div.no-order').classList.remove('nodisplay')
+
+                document.querySelector('div.order-detail button.placeOrder').classList.add('nodisplay')
+            }
         }
 
     }
