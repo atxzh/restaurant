@@ -47,7 +47,7 @@
 
             document.addEventListener('click', (e) => {
 
-                if (!e.target.closest('div.order-detail') && !e.target.closest('div.order-cart')) {
+                if (!e.target.closest('div.order-detail') && !e.target.closest('div.order-cart') && !e.target.closest('svg.side-icon')) {
                     orderDetail.style.setProperty('display', 'none')
                 }
 
@@ -99,7 +99,7 @@
 
         document.addEventListener('click', (e) => {
 
-            if (!e.target.closest('div.order-detail') && !e.target.closest('div.order-cart') && orderCart.checked) {
+            if (!e.target.closest('div.order-detail') && !e.target.closest('div.order-cart') && orderCart.checked && !e.target.closest('svg.side-icon')) {
                 orderCart.checked = false
             }
 
