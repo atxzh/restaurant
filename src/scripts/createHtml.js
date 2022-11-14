@@ -1,4 +1,4 @@
-var HTML_STRING = [
+export var HTML_STRING = [
     {
         element: "section",
         child: [
@@ -897,7 +897,7 @@ var HTML_STRING = [
                                         element: "label",
                                         for: "compBread",
                                         class: "tab tab-compBread",
-                                        child: ["Slices & Breads"]
+                                        child: ["Sides & Breads"]
                                     },
                                     {
                                         element: "div",
@@ -1107,4 +1107,4 @@ export default function createHTML(elem, parentElem) {
     return parentElem.append(...children)
 }
 
-createHTML(HTML_STRING, document.body)
+// createHTML(HTML_STRING, document.body)

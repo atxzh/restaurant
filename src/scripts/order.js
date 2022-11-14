@@ -1,7 +1,6 @@
+import createHTML from "./createHtml.js";
 
-const orderCart = (function () {
-
-    const orderDetail = document.querySelector('div.order-detail')
+export const orderCart = (function () {
 
     function _changeTotal(itemPrice, phase) {
         const totalPrice = document.querySelector('p.order-totalPrice>span.text-medium')
@@ -33,7 +32,7 @@ const orderCart = (function () {
 
             const hr = document.querySelector('div.order-detail>hr')
 
-            orderDetail.insertBefore(newElementOrder, hr)
+            document.querySelector('div.order-detail').insertBefore(newElementOrder, hr)
 
             _buttonEvent(newElementOrder)
 
@@ -49,52 +48,64 @@ const orderCart = (function () {
         gridItem.classList = 'order-item';
         gridItem.dataset.itemId = itemDetails.itemID;
 
-        // Item Image
-        const itemImage = document.createElement('img');
-        itemImage.classList = 'order-itemImg'
-        itemImage.src = itemDetails.itemImg;
+        const elem = [
+            {
+                element: "img",
+                class: "order-itemImg",
+                src: `${itemDetails.itemImg}`
+            },
+            {
+                element: "p",
+                class: "order-itemTitle text-medium",
+                child: [`${itemDetails.itemTitle}`]
+            },
+            {
+                element: "p",
+                class: "order-itemText text-small",
+                child: [
+                    "x",
+                    {
+                        element: "span",
+                        class: "order-itemTotalQty",
+                        child: ["1"]
+                    },
+                    " - $",
+                    {
+                        element: "span",
+                        class: "order-itemTotalPrice text-small",
+                        child: [`${Number(itemDetails.itemPrice).toFixed(2)}`]
+                    }
+                ]
+            },
+            {
+                element: "div",
+                class: "order-itemButtons",
+                child: [
+                    {
+                        elementNS: "svg",
+                        class: "icon side-icon",
+                        child: [
+                            {
+                                elementNS: "use",
+                                href: "./asset/icons.sprite.svg#addBox"
+                            }
+                        ]
+                    },
+                    {
+                        elementNS: "svg",
+                        class: "icon side-icon",
+                        child: [
+                            {
+                                elementNS: "use",
+                                href: "./asset/icons.sprite.svg#remove"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
 
-        // Item Title
-        const itemTitle = document.createElement('p');
-        itemTitle.classList = 'order-itemTitle text-medium';
-        itemTitle.textContent = itemDetails.itemTitle;
-
-        // Item Text
-        const itemText = document.createElement('p');
-        itemText.classList = 'order-itemText text-small';
-
-        const itemTotalQty = document.createElement('span');
-        itemTotalQty.classList = 'order-itemTotalQty'
-        itemTotalQty.textContent = '1';
-
-        const itemTotalPrice = document.createElement('span');
-        itemTotalPrice.classList = 'order-itemTotalPrice text-small'
-        itemTotalPrice.textContent = Number(itemDetails.itemPrice).toFixed(2);
-
-        itemText.insertAdjacentHTML('beforeend', 'x')
-        itemText.insertAdjacentElement('beforeend', itemTotalQty)
-        itemText.insertAdjacentHTML('beforeend', ' - $')
-        itemText.insertAdjacentElement('beforeend', itemTotalPrice)
-
-        // Item Buttons
-        const itemButtons = document.createElement('div')
-        itemButtons.classList = 'order-itemButtons'
-
-        for (svg of ['./asset/icons.sprite.svg#addBox', './asset/icons.sprite.svg#remove']) {
-            const button = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-            button.classList = 'icon side-icon'
-
-            const svgLink = document.createElementNS(
-                'http://www.w3.org/2000/svg',
-                'use'
-            );
-            svgLink.setAttribute('href', svg)
-
-            button.appendChild(svgLink)
-            itemButtons.appendChild(button)
-        }
-
-        gridItem.append(itemImage, itemTitle, itemText, itemButtons)
+        createHTML(elem, gridItem)
 
         return gridItem
     }
@@ -181,7 +192,7 @@ const orderCart = (function () {
 
     }
 
-    addItem = function (itemDetails = null) {
+    const addItem = function (itemDetails = null) {
 
         if (itemDetails) {
 
@@ -210,5 +221,3 @@ const orderCart = (function () {
     return { addItem }
 
 })();
-
-orderCart.addItem(null);

@@ -1,7 +1,7 @@
 
 // For FireFox
 
-(function () {
+export default function () {
     if (navigator.userAgent.includes('Firefox')) {
 
         const navigationHome = document.querySelector('div.nav-menu>.nav-list.navHome');
@@ -127,4 +127,3 @@
 
     }
 }
-)();
