@@ -4,6 +4,8 @@ A Simple Restaurant Page
 
 ## Link
 
+Link to Live Project [Here](https://mlksathil.github.io/restaurant/)
+
 ## What's There?
 
 - Horizontal / Vertical Accordion
@@ -17,8 +19,6 @@ A Simple Restaurant Page
     - Fonts
         - Maron Rose
         - El Messiri
-
     - Icons
 
-2. Images
-    - Search Results From Google
+2. Images are from Random Search Results from Google

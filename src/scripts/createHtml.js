@@ -1000,7 +1000,7 @@ export var HTML_STRING = [
             " by Athil ",
             {
                 element: "a",
-                href: "",
+                href: "https://github.com/mlksathil/restaurant",
                 child: [
                     {
                         elementNS: "svg",
@@ -1014,7 +1014,7 @@ export var HTML_STRING = [
                     }
                 ]
             },
-            "No Rights Reserved | 2022"
+            "2022"
         ]
     }
 ];
