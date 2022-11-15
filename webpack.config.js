@@ -47,7 +47,8 @@ module.exports = {
             title: 'Lotus - Indian Cusine Restaurant',
             template: './src/main.html',
             filename: 'index.html',
-            inject: 'body'
+            inject: 'body',
+            favicon: './src/asset/img/logo.svg'
         })
     ],
     devtool: 'source-map',
