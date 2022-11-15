@@ -1,14 +1,63 @@
 import createHTML from "./createHtml.js";
+import IconSVG from '../asset/icons.sprite.svg';
+
+import bigDecimal from 'js-big-decimal';
+
 
 export const orderCart = (function () {
 
     function _changeTotal(itemPrice, phase) {
         const totalPrice = document.querySelector('p.order-totalPrice>span.text-medium')
+        const totalPriceDecimal = document.querySelector('p.order-totalPrice>span.text-small:last-child')
+
+        const CF = 100000000000;
 
         if (phase == 'add') {
-            totalPrice.textContent = Number(totalPrice.textContent) + itemPrice
+            const priceWithDecimal = Number(totalPrice.textContent + '.' + totalPriceDecimal.textContent) + itemPrice
+
+            totalPrice.textContent = (priceWithDecimal).toString().replace(/\..+$/, '');
+            totalPriceDecimal.textContent = (
+                Math.floor(
+                    (priceWithDecimal * CF) - (Number(totalPrice.textContent) * CF)
+                ) / CF
+            ).toString()
+                .replace('0.', '')
+
+            console.log(priceWithDecimal * CF, Math.floor(priceWithDecimal) * CF,
+                ((priceWithDecimal * CF) - (Number(totalPrice.textContent) * CF)),
+                ((priceWithDecimal * CF) - (Number(totalPrice.textContent) * CF)) / CF,
+                "To Add: " + itemPrice,
+                "Final: " +
+                Math.floor(priceWithDecimal).toString() + "." +
+                (
+                    ((priceWithDecimal * CF) - (Math.floor(priceWithDecimal) * CF)) / CF
+                ).toString().replace('0.', '').substring(0, 2)
+            )
+
+
         } else {
-            totalPrice.textContent = Number(totalPrice.textContent) - itemPrice
+            const priceWithDecimal = Number(totalPrice.textContent + '.' + totalPriceDecimal.textContent) - itemPrice
+
+            totalPrice.textContent = (priceWithDecimal).toString().replace(/\..+$/, '');
+            totalPriceDecimal.textContent = (
+                Math.floor(
+                    (priceWithDecimal * CF) - (Number(totalPrice.textContent) * CF)
+                ) / CF
+            ).toString()
+                .replace('0.', '');
+
+
+            console.log(priceWithDecimal * CF, Math.floor(priceWithDecimal) * CF,
+                ((priceWithDecimal * CF) - (Number(totalPrice.textContent) * CF)),
+                ((priceWithDecimal * CF) - (Number(totalPrice.textContent) * CF)) / CF,
+                "Before: " + Number(totalPrice.textContent + '.' + totalPriceDecimal.textContent),
+                "To Remove: " + itemPrice,
+                "Final: " +
+                Math.floor(priceWithDecimal).toString() + "." +
+                (
+                    ((priceWithDecimal * CF) - (Math.floor(priceWithDecimal) * CF)) / CF
+                ).toString().replace('0.', '').substring(0, 2)
+            )
         }
     }
 
@@ -87,7 +136,7 @@ export const orderCart = (function () {
                         child: [
                             {
                                 elementNS: "use",
-                                href: "./asset/icons.sprite.svg#addBox"
+                                href: `${IconSVG}#addBox`
                             }
                         ]
                     },
@@ -97,7 +146,7 @@ export const orderCart = (function () {
                         child: [
                             {
                                 elementNS: "use",
-                                href: "./asset/icons.sprite.svg#remove"
+                                href: `${IconSVG}#remove`
                             }
                         ]
                     }
