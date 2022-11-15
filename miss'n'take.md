@@ -30,3 +30,12 @@
 ### DOM
 
 1. Creating SVG needs to be created with `.createElementNS(namespaceurl, element)`
+
+### Numbers
+
+1. Floating Point Precision
+    1. Solve with Coefficient Factor
+        - `11.2 - 11 --> 0.19999999993`
+        - `((11.2 * 1000) - (11 * 1000))/1000 --> 0.2`
+        - Doesn't work all the time.
+    2. Using library `js-big-decimal`

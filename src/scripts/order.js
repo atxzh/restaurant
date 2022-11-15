@@ -13,51 +13,40 @@ export const orderCart = (function () {
         const CF = 100000000000;
 
         if (phase == 'add') {
-            const priceWithDecimal = Number(totalPrice.textContent + '.' + totalPriceDecimal.textContent) + itemPrice
+            const priceWithDecimal = bigDecimal.add(totalPrice.textContent + '.' + totalPriceDecimal.textContent, itemPrice)
 
             totalPrice.textContent = (priceWithDecimal).toString().replace(/\..+$/, '');
-            totalPriceDecimal.textContent = (
-                Math.floor(
-                    (priceWithDecimal * CF) - (Number(totalPrice.textContent) * CF)
-                ) / CF
-            ).toString()
-                .replace('0.', '')
+            totalPriceDecimal.textContent = bigDecimal.subtract(priceWithDecimal, totalPrice.textContent).toString().replace('0.', '');
 
-            console.log(priceWithDecimal * CF, Math.floor(priceWithDecimal) * CF,
-                ((priceWithDecimal * CF) - (Number(totalPrice.textContent) * CF)),
-                ((priceWithDecimal * CF) - (Number(totalPrice.textContent) * CF)) / CF,
-                "To Add: " + itemPrice,
-                "Final: " +
-                Math.floor(priceWithDecimal).toString() + "." +
-                (
-                    ((priceWithDecimal * CF) - (Math.floor(priceWithDecimal) * CF)) / CF
-                ).toString().replace('0.', '').substring(0, 2)
-            )
+            // console.log(priceWithDecimal * CF, Math.floor(priceWithDecimal) * CF,
+            //     ((priceWithDecimal * CF) - (Number(totalPrice.textContent) * CF)),
+            //     ((priceWithDecimal * CF) - (Number(totalPrice.textContent) * CF)) / CF,
+            //     "To Add: " + itemPrice,
+            //     "Final: " +
+            //     Math.floor(priceWithDecimal).toString() + "." +
+            //     (
+            //         ((priceWithDecimal * CF) - (Math.floor(priceWithDecimal) * CF)) / CF
+            //     ).toString().replace('0.', '').substring(0, 2)
+            // )
 
 
         } else {
-            const priceWithDecimal = Number(totalPrice.textContent + '.' + totalPriceDecimal.textContent) - itemPrice
+            const priceWithDecimal = bigDecimal.subtract(totalPrice.textContent + '.' + totalPriceDecimal.textContent, itemPrice)
 
             totalPrice.textContent = (priceWithDecimal).toString().replace(/\..+$/, '');
-            totalPriceDecimal.textContent = (
-                Math.floor(
-                    (priceWithDecimal * CF) - (Number(totalPrice.textContent) * CF)
-                ) / CF
-            ).toString()
-                .replace('0.', '');
+            totalPriceDecimal.textContent = bigDecimal.subtract(priceWithDecimal, totalPrice.textContent).toString().replace('0.', '');
 
-
-            console.log(priceWithDecimal * CF, Math.floor(priceWithDecimal) * CF,
-                ((priceWithDecimal * CF) - (Number(totalPrice.textContent) * CF)),
-                ((priceWithDecimal * CF) - (Number(totalPrice.textContent) * CF)) / CF,
-                "Before: " + Number(totalPrice.textContent + '.' + totalPriceDecimal.textContent),
-                "To Remove: " + itemPrice,
-                "Final: " +
-                Math.floor(priceWithDecimal).toString() + "." +
-                (
-                    ((priceWithDecimal * CF) - (Math.floor(priceWithDecimal) * CF)) / CF
-                ).toString().replace('0.', '').substring(0, 2)
-            )
+            // console.log(priceWithDecimal * CF, Math.floor(priceWithDecimal) * CF,
+            //     ((priceWithDecimal * CF) - (Number(totalPrice.textContent) * CF)),
+            //     ((priceWithDecimal * CF) - (Number(totalPrice.textContent) * CF)) / CF,
+            //     "Before: " + Number(totalPrice.textContent + '.' + totalPriceDecimal.textContent),
+            //     "To Remove: " + itemPrice,
+            //     "Final: " +
+            //     Math.floor(priceWithDecimal).toString() + "." +
+            //     (
+            //         ((priceWithDecimal * CF) - (Math.floor(priceWithDecimal) * CF)) / CF
+            //     ).toString().replace('0.', '').substring(0, 2)
+            // )
         }
     }
 
