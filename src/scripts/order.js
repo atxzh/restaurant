@@ -18,17 +18,6 @@ export const orderCart = (function () {
             totalPrice.textContent = (priceWithDecimal).toString().replace(/\..+$/, '');
             totalPriceDecimal.textContent = bigDecimal.subtract(priceWithDecimal, totalPrice.textContent).toString().replace('0.', '');
 
-            // console.log(priceWithDecimal * CF, Math.floor(priceWithDecimal) * CF,
-            //     ((priceWithDecimal * CF) - (Number(totalPrice.textContent) * CF)),
-            //     ((priceWithDecimal * CF) - (Number(totalPrice.textContent) * CF)) / CF,
-            //     "To Add: " + itemPrice,
-            //     "Final: " +
-            //     Math.floor(priceWithDecimal).toString() + "." +
-            //     (
-            //         ((priceWithDecimal * CF) - (Math.floor(priceWithDecimal) * CF)) / CF
-            //     ).toString().replace('0.', '').substring(0, 2)
-            // )
-
 
         } else {
             const priceWithDecimal = bigDecimal.subtract(totalPrice.textContent + '.' + totalPriceDecimal.textContent, itemPrice)
@@ -36,17 +25,6 @@ export const orderCart = (function () {
             totalPrice.textContent = (priceWithDecimal).toString().replace(/\..+$/, '');
             totalPriceDecimal.textContent = bigDecimal.subtract(priceWithDecimal, totalPrice.textContent).toString().replace('0.', '');
 
-            // console.log(priceWithDecimal * CF, Math.floor(priceWithDecimal) * CF,
-            //     ((priceWithDecimal * CF) - (Number(totalPrice.textContent) * CF)),
-            //     ((priceWithDecimal * CF) - (Number(totalPrice.textContent) * CF)) / CF,
-            //     "Before: " + Number(totalPrice.textContent + '.' + totalPriceDecimal.textContent),
-            //     "To Remove: " + itemPrice,
-            //     "Final: " +
-            //     Math.floor(priceWithDecimal).toString() + "." +
-            //     (
-            //         ((priceWithDecimal * CF) - (Math.floor(priceWithDecimal) * CF)) / CF
-            //     ).toString().replace('0.', '').substring(0, 2)
-            // )
         }
     }
 
