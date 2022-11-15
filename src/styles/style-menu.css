@@ -152,7 +152,7 @@ main.menu>div.menu-slides {
 }
 
 .grid-item>div.item-sideInfo {
-    grid-column: -5 / -3;
+    grid-column: -5 / -2;
     grid-row: -2 / -1;
     align-self: start;
     justify-self: start;
@@ -178,6 +178,8 @@ main.menu>div.menu-slides {
 .grid-item>button.item-button {
 
     grid-area: -2 / -2 / -1 / -1;
+    align-self: end;
+    justify-self: end;
 
     z-index: 4;
 
@@ -186,6 +188,7 @@ main.menu>div.menu-slides {
     border-radius: .25rem;
 
     padding: .25rem;
+    margin: .5rem;
 }
 
 svg.icon-button {
@@ -235,7 +238,7 @@ button.item-button:hover>svg.icon-button {
     grid-template-columns: 15rem;
     grid-template-rows: repeat(auto-fill, 10rem);
     grid-auto-columns: 15rem;
-    gap: 2rem 1rem;
+    gap: 1rem;
     grid-auto-flow: column;
     align-content: space-evenly;
 
