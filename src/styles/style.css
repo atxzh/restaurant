@@ -466,3 +466,27 @@ footer>a>svg.icon {
 .nodisplay {
     display: none !important;
 }
+
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #ffffff0d;
+    opacity: .5;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgb(var(--color-secondary-2), .45);
+    border-radius: 10px
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(var(--color-secondary-1), .45);
+
+}
