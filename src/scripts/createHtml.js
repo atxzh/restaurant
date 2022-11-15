@@ -1,3 +1,7 @@
+import Logo from '../asset/img/logo.svg'
+import MainPic from '../asset/img-disp/biriyani_1.webp'
+import IconSVG from '../asset/icons.sprite.svg';
+
 export var HTML_STRING = [
     {
         element: "section",
@@ -12,8 +16,8 @@ export var HTML_STRING = [
                             {
                                 element: "img",
                                 class: "logo-img",
-                                "src": "asset/img/logo.svg",
-                                "alt": "Restaurant logo"
+                                src: Logo,
+                                alt: "Restaurant logo"
                             },
                             {
                                 element: "p",
@@ -113,7 +117,7 @@ export var HTML_STRING = [
                                         child: [
                                             {
                                                 elementNS: "use",
-                                                href: "./asset/icons.sprite.svg#basket"
+                                                href: `${IconSVG}#basket`
                                             }
                                         ]
                                     }
@@ -633,7 +637,7 @@ export var HTML_STRING = [
                             {
                                 element: "img",
                                 class: "home-right image-big",
-                                src: "./asset/img-disp/biriyani_1.webp",
+                                src: MainPic,
                                 alt: "Main Pic"
                             }
                         ]
@@ -654,7 +658,7 @@ export var HTML_STRING = [
                                 child: [
                                     {
                                         elementNS: "use",
-                                        href: "./asset/icons.sprite.svg#menu"
+                                        href: `${IconSVG}#menu`
                                     }
                                 ]
                             },
@@ -685,56 +689,6 @@ export var HTML_STRING = [
                             {
                                 element: "div",
                                 class: "tab-appetizer-window grid-vertical",
-                                child: [
-                                    {
-                                        element: "div",
-                                        class: "grid-item",
-                                        "data-item-id": "aptz123",
-                                        child: [
-                                            {
-                                                element: "img",
-                                                src: "./asset/img-disp/biriyani_1.webp",
-                                                class: "item-image"
-                                            },
-                                            {
-                                                element: "div",
-                                                class: "item-image-fg"
-                                            },
-                                            {
-                                                element: "div",
-                                                class: "item-sideInfo",
-                                                child: [
-                                                    {
-                                                        element: "p",
-                                                        class: "item-title",
-                                                        child: ["Biriyani"]
-                                                    },
-                                                    {
-                                                        element: "p",
-                                                        class: "item-price text-small",
-                                                        child: ["$ 12"]
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                element: "button",
-                                                class: "item-button button-small orderNow",
-                                                child: [
-                                                    {
-                                                        elementNS: "svg",
-                                                        class: "icon icon-button",
-                                                        child: [
-                                                            {
-                                                                elementNS: "use",
-                                                                href: "./asset/icons.sprite.svg#addBox"
-                                                            }
-                                                        ]
-                                                    }
-                                                ]
-                                            }
-                                        ]
-                                    }
-                                ]
                             },
                             {
                                 element: "input",
@@ -955,7 +909,7 @@ export var HTML_STRING = [
                                 child: [
                                     {
                                         elementNS: "use",
-                                        href: "./asset/icons.sprite.svg#info"
+                                        href: `${IconSVG}#info`
                                     }
                                 ]
                             },
@@ -1050,7 +1004,7 @@ export var HTML_STRING = [
                         child: [
                             {
                                 elementNS: "use",
-                                href: "./asset/icons.sprite.svg#github"
+                                href: `${IconSVG}#github`
                             }
                         ]
                     }
