@@ -12,7 +12,7 @@
 
     --color-primary-1: 195, 20, 40;
     --color-primary-2: 131, 0, 0;
-    --color-primary-3: 117, 16, 6;
+    --color-primary-3: 150, 16, 10;
 
     --color-secondary-1: 21, 21, 20;
     --color-secondary-2: 10, 10, 10;
@@ -107,7 +107,8 @@ input {
     appearance: none;
 }
 
-input[type="radio"] {
+input[type="radio"],
+input[type="checkbox"] {
     display: none;
 }
 
@@ -129,6 +130,8 @@ label {
 
     outline: none;
     border: .125rem solid rgb(var(--color-text-primary));
+
+    text-align: center;
 }
 
 .button-big:hover {
@@ -249,7 +252,7 @@ header:has(>.nav-menu>.navAbout>input#navAbout:checked)~main.about {
     align-items: center;
     justify-content: center;
 
-    background-color: rgb(var(--color-secondary-1));
+    background-color: rgb(var(--color-secondary-2));
 
     position: relative;
 }
@@ -259,6 +262,7 @@ header:has(>.nav-menu>.navAbout>input#navAbout:checked)~main.about {
     height: 2rem;
 
     fill: rgb(var(--color-text-secondary));
+    display: flex;
 }
 
 .order-cart>label>svg.icon:hover {
@@ -267,8 +271,8 @@ header:has(>.nav-menu>.navAbout>input#navAbout:checked)~main.about {
 
 div.order-count {
     position: absolute;
-    bottom: -.15rem;
-    left: 2rem;
+    bottom: 0.15rem;
+    left: 2.5rem;
 
     width: .8rem;
     height: .8rem;
@@ -278,6 +282,9 @@ div.order-count {
     border-radius: inherit;
 
     background-color: rgb(var(--color-primary-1));
+    color: rgb(var(--color-secondary-1));
+
+    font-family: 'Maron Rose';
 }
 
 /* SECTION Order Detail */
@@ -288,19 +295,21 @@ div.order-detail {
     bottom: 12px;
 
     width: max(17%, 15rem);
-    height: max-content;
+    max-height: 90%;
 
     padding: .5rem;
 
     border-radius: .25rem;
     border-bottom-left-radius: 3.5rem;
 
-    background-color: rgb(var(--color-primary-2));
+    background-color: rgb(var(--color-primary-3));
     color: rgb(var(--color-secondary-2));
 
     display: none;
     flex-flow: column nowrap;
     gap: .25rem;
+
+    overflow: hidden;
 }
 
 div.order-cart:has(>input#orderCart:checked)+div.order-detail {
@@ -309,11 +318,11 @@ div.order-cart:has(>input#orderCart:checked)+div.order-detail {
 
 /* SECTION Order Detail Item */
 
-div.order-detail>.order-item {
+div.order-detail>div.ordered-items>.order-item {
     width: 100%;
     height: auto;
 
-    margin: .65rem .5rem .35rem;
+    margin: .5rem .45rem .15rem .65rem;
 
     display: grid;
     grid-template-rows: repeat(2, 1fr);
@@ -321,7 +330,7 @@ div.order-detail>.order-item {
         "img title title title title"
         "img text text . addrem";
 
-    /* gap: .15rem .25rem; */
+    gap: .15rem .25rem;
     justify-items: start;
     align-items: center;
     align-content: start;
@@ -329,12 +338,17 @@ div.order-detail>.order-item {
     /* overflow: hidden; */
 }
 
+div.order-detail>div.ordered-items {
+    width: 100%;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
 .order-item>img.order-itemImg {
     grid-area: img;
     width: 3rem;
     height: 3rem;
-
-    margin: 0rem 0rem 0rem .5rem;
 
     border-radius: .25rem;
     border: .15rem solid rgb(var(--color-text-primary));
@@ -347,11 +361,12 @@ div.order-detail>.order-item {
     font-weight: 800;
     font-size: 1rem;
 
-    margin-bottom: -.25rem;
+    margin-bottom: -.5rem;
 }
 
 .order-item>p.order-itemText {
     grid-area: text;
+    margin-left: .5rem;
 }
 
 .order-item span.order-itemTotalPrice {
@@ -362,9 +377,9 @@ div.order-detail>.order-item {
     width: 1rem;
     height: 1rem;
 
-    fill: rgb(var(--color-text-primary));
+    fill: rgb(var(--color-secondary-1));
 
-    background-color: rgba(var(--color-secondary-2), .45);
+    background-color: rgba(var(--color-text-primary), .15);
     border-radius: .15rem;
 
     padding: .15rem;
@@ -372,7 +387,7 @@ div.order-detail>.order-item {
 }
 
 .order-item svg:hover {
-    fill: rgb(var(--color-secondary-2));
+    fill: rgb(var(--color-text-primary));
 }
 
 .order-item div.order-itemButtons {
@@ -380,6 +395,12 @@ div.order-detail>.order-item {
 
     display: flex;
     align-items: center;
+
+    margin: 0rem .5rem .5rem;
+}
+
+div.no-order {
+    overflow: hidden;
 }
 
 /* END !SECTION Order Detail Item */

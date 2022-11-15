@@ -136,13 +136,19 @@ export var HTML_STRING = [
                         child: [
                             {
                                 element: "div",
-                                class: "no-order",
+                                class: "ordered-items",
                                 child: [
-                                    "Nothing to Place ",
                                     {
-                                        element: "br"
-                                    },
-                                    " Order On."
+                                        element: "div",
+                                        class: "no-order",
+                                        child: [
+                                            "Nothing to Place ",
+                                            {
+                                                element: "br"
+                                            },
+                                            " Order On."
+                                        ]
+                                    }
                                 ]
                             },
                             {
@@ -454,7 +460,6 @@ export var HTML_STRING = [
                                                 name: "time",
                                                 id: "afternoon",
                                                 class: "request-time-head",
-                                                checked: true
                                             },
                                             {
                                                 element: "label",
@@ -467,7 +472,6 @@ export var HTML_STRING = [
                                                 name: "time",
                                                 id: "night",
                                                 class: "request-time-head",
-                                                checked: true
                                             },
                                             {
                                                 element: "label",

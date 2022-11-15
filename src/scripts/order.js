@@ -46,9 +46,7 @@ export const orderCart = (function () {
 
             const newElementOrder = _createNewOrder(itemDetails)
 
-            const hr = document.querySelector('div.order-detail>hr')
-
-            document.querySelector('div.order-detail').insertBefore(newElementOrder, hr)
+            document.querySelector('div.order-detail>div.ordered-items').append(newElementOrder)
 
             _buttonEvent(newElementOrder)
 
@@ -132,11 +130,11 @@ export const orderCart = (function () {
 
         if (item) {
 
-            button = item.querySelectorAll('div.order-detail>.order-item>.order-itemButtons')
+            button = item.querySelectorAll('div.order-detail>div.ordered-items>.order-item>.order-itemButtons')
 
         } else {
 
-            button = document.querySelectorAll('div.order-detail>.order-item>.order-itemButtons')
+            button = document.querySelectorAll('div.order-detail>div.ordered-items>.order-item>.order-itemButtons')
 
         }
 
@@ -189,7 +187,7 @@ export const orderCart = (function () {
             if (orderCount.textContent == 1) {
                 orderCount.classList.remove('nodisplay')
 
-                document.querySelector('div.order-detail>div.no-order').classList.add('nodisplay')
+                document.querySelector('div.order-detail>div.ordered-items>div.no-order').classList.add('nodisplay')
 
                 document.querySelector('div.order-detail button.placeOrder').classList.remove('nodisplay')
             }
@@ -200,7 +198,7 @@ export const orderCart = (function () {
             if (orderCount.textContent == 0) {
                 orderCount.classList.add('nodisplay')
 
-                document.querySelector('div.order-detail div.no-order').classList.remove('nodisplay')
+                document.querySelector('div.order-detail>div.ordered-items>div.no-order').classList.remove('nodisplay')
 
                 document.querySelector('div.order-detail button.placeOrder').classList.add('nodisplay')
             }
