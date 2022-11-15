@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/style-home.css">
+    <link rel="stylesheet" href="./styles/style-menu.css">
+    <link rel="stylesheet" href="./styles/style-about.css">
+    <link rel="stylesheet" href="./styles/compatibility.css">
+    <title>Lotus - Indian Cuisine Restaurant</title>
+</head>
+
+<body>
+    <section>
+        <header>
+            <div class="logo">
+                <img class="logo-img" src="asset/img/logo.svg" alt="Restaurant logo">
+                <p class="logo-text text-big">LOTUS</p>
+                <p class="logo-text text-small">An Indian Cusine</p>
+                <p class="logo-text text-small">Restaurant</p>
+            </div>
+            <div class="nav-menu">
+                <nav class="nav-list navHome">
+                    <input type="radio" name="headNav" id="navHome" checked>
+                    <label for="navHome" class="nav-text text-medium"> Home </label>
+                </nav>
+                <nav class="nav-list navMenu">
+                    <input type="radio" name="headNav" id="navMenu">
+                    <label for="navMenu" class="nav-text text-medium">Menu</label>
+                </nav>
+                <nav class="nav-list navAbout">
+                    <input type="radio" name="headNav" id="navAbout">
+                    <label for="navAbout" class="nav-text text-medium">About</label>
+                </nav>
+            </div>
+            <div class="order-cart">
+                <input type="checkbox" name="order-cart" id="orderCart">
+                <label for="orderCart">
+                    <svg class="icon header-icon">
+                        <use href="./asset/icons.sprite.svg#basket"></use>
+                    </svg>
+                </label>
+                <div class="order-count nodisplay">0</div>
+            </div>
+            <div class="order-detail">
+                <!-- <div class="order-item">
+                    <img class="order-itemImg" src="./asset/img-disp/dosa-transformed_1.webp" alt="">
+                    <p class="order-itemTitle text-medium"> Masal Dosai </p>
+                    <p class="order-itemText text-small">
+                        x<span class="order-itemTotalQty">2</span> -
+                        $<span class="order-itemTotalPrice text-small">12.00</span>
+                    </p>
+                    <div class="order-itemButtons">
+                        <svg class="icon side-icon">
+                            <use href="./asset/icons.sprite.svg#addBox"></use>
+                        </svg>
+                        <svg class="icon side-icon">
+                            <use href="./asset/icons.sprite.svg#remove"></use>
+                        </svg>
+                    </div>
+                </div>
+                <div class="order-item">
+                    <img class="order-itemImg" src="./asset/img-disp/dosa-transformed_1.webp" alt="">
+                    <p class="order-itemTitle text-medium"> Masal Dosai </p>
+                    <p class="order-itemText text-small">
+                        x<span class="order-itemTotalQty">2</span> -
+                        $<span class="order-itemTotalPrice text-small">12.00</span>
+                    </p>
+                    <div class="order-itemButtons">
+                        <svg class="icon side-icon">
+                            <use href="./asset/icons.sprite.svg#addBox"></use>
+                        </svg>
+                        <svg class="icon side-icon">
+                            <use href="./asset/icons.sprite.svg#remove"></use>
+                        </svg>
+                    </div>
+                </div> -->
+
+                <div class="no-order">
+                    Nothing to Place <br> Order On.
+                </div>
+
+                <hr>
+
+                <p class="order-totalPrice"><span class="text-small">$</span><span class="text-medium">00</span>.<span
+                        class="text-small">00</span></p>
+
+                <button class="home-button-big button-big button-big-nohi placeOrder nodisplay">Place Order</button>
+            </div>
+        </header>
+
+        <!-- Home -->
+        <main class="home">
+            <div class="home-left">
+                <p class="home-text-big text-big">Relish the Indian Spices - Spices favoured from all around the world -
+                    in your
+                    plate - flavoured with Tradition</p>
+                <div class="home-request">
+                    <input type="radio" name="orderortable" id="orderNow">
+                    <label for="orderNow" class="home-button-big button-big button-big-hi orderNow">Order Now</label>
+                    <p class="home-text-small">or</p>
+                    <input type="radio" name="orderortable" id="tableReserve">
+                    <label for="tableReserve" class="home-button-big button-big button-big-nohi reserve">Reserve a
+                        Table</label>
+                </div>
+            </div>
+            <div class="home-right">
+
+                <div class="request-menu">
+                    <div class="home-request-text">Personal Information</div>
+                    <div class="home-request-name">
+                        <div class="input-request">
+                            <label for="firstName">First Name </label>
+                            <input type="text" name="firstName" id="fname" class="input-text text-fname" required>
+                            <span></span>
+                        </div>
+                        <div class="input-request">
+                            <label for="lastName"> Last Name </label>
+                            <input type="text" name="lastName" id="lname" class="input-text text-lname" required>
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="home-request-text">Contact Information</div>
+                    <div class="home-request-name">
+                        <div class="input-request">
+                            <label for="email">E-mail </label>
+                            <input type="email" name="email" id="email" class="input-text text-email" required>
+                            <span></span>
+                        </div>
+                        <div class="input-request">
+                            <label for="phone"> Phone Number </label>
+                            <input type="tel" name="phone" id="pnum" class="input-text text-pnum" required>
+                            <span></span>
+                        </div>
+                    </div>
+
+                    <div class="home-request-text">Date & Occasion</div>
+                    <div class="home-request-info">
+                        <div class="input-request">
+                            <label for="date"> Date </label>
+                            <input type="date" name="date" id="date" class="input-text text-date" required>
+                            <span></span>
+                        </div>
+                        <div class="input-request">
+                            <label for="occasion"> Occasion </label>
+                            <input type="text" name="occasion" id="dateOccasion" list="events"
+                                class="input-text text-occasion">
+                            <datalist id="events">
+                                <option value="Wedding Anniversary"></option>
+                                <option value="Birthday"></option>
+                                <option value="Job Promotion"></option>
+                                <option value="Wedding"></option>
+                            </datalist>
+                        </div>
+                    </div>
+
+                    <div class="home-request-text">Time Slot</div>
+                    <div class="home-request-time">
+                        <input type="radio" name="time" id="morning" class="request-time-head" checked>
+                        <label for="morning">Morning</label>
+
+                        <input type="radio" name="time" id="afternoon" class="request-time-head">
+                        <label for="afternoon">Afternoon</label>
+
+                        <input type="radio" name="time" id="night" class="request-time-head">
+                        <label for="night">Night</label>
+
+                        <div class="time-slot time-slot-morning">
+                            <input type="radio" name="time-slot" id="time0900">
+                            <label for="time0900">09:00</label>
+                            <input type="radio" name="time-slot" id="time0930">
+                            <label for="time0930">09:30</label>
+                            <input type="radio" name="time-slot" id="time1000">
+                            <label for="time1000">10:00</label>
+                            <input type="radio" name="time-slot" id="time1030">
+                            <label for="time1030">10:30</label>
+                        </div>
+                        <div class="time-slot time-slot-afternoon">
+                            <input type="radio" name="time-slot" id="time1230">
+                            <label for="time1230">12:30</label>
+                            <input type="radio" name="time-slot" id="time1300">
+                            <label for="time1300">13:00</label>
+                            <input type="radio" name="time-slot" id="time1330">
+                            <label for="time1330">13:30</label>
+                            <input type="radio" name="time-slot" id="time1400">
+                            <label for="time1300">14:00</label>
+                        </div>
+                        <div class="time-slot time-slot-night">
+                            <input type="radio" name="time-slot" id="time1930">
+                            <label for="time1930">19:30</label>
+                            <input type="radio" name="time-slot" id="time2000">
+                            <label for="time2000">20:00</label>
+                            <input type="radio" name="time-slot" id="time2030">
+                            <label for="time2030">20:30</label>
+                            <input type="radio" name="time-slot" id="time2100">
+                            <label for="time2100">21:00</label>
+                        </div>
+
+                    </div>
+                    <button class="button-big button-big-nohi" type="submit">Submit</button>
+                </div>
+
+                <img class="home-right image-big" src="./asset/img-disp/biriyani_1.webp" alt="biriyani_1">
+            </div>
+        </main>
+
+        <!-- Menu -->
+        <main class="menu">
+            <div class="menu-heading">
+                <svg class="icon title-icon">
+                    <use href="./asset/icons.sprite.svg#menu"></use>
+                </svg>
+                <p class="menu-title">Menu</p>
+            </div>
+            <div class="menu-slides">
+                <input type="radio" name="main-nav" id="appetizer" checked>
+                <label for="appetizer" class="tab tab-appetizer">Appetizer</label>
+                <div class="tab-appetizer-window grid-vertical">
+
+                    <div class="grid-item" data-item-id="aptz123">
+                        <img src="./asset/img-disp/biriyani_1.webp" alt="" class="item-image">
+                        <div class="item-image-fg"></div>
+
+                        <div class="item-sideInfo">
+                            <p class="item-title">Biriyani</p>
+                            <p class="item-price text-small">$ 12</p>
+                        </div>
+                        <button class="item-button button-small orderNow"><svg class="icon icon-button">
+                                <use href="./asset/icons.sprite.svg#addBox"></use>
+                            </svg> </button>
+                    </div>
+
+                </div>
+
+                <input type="radio" name="main-nav" id="dish">
+                <label for="dish" class="tab tab-dish">Dishes</label>
+                <div class="tab-dish-window grid-vertical">
+
+                    <input type="radio" name="main-nav-dish" id="dishVeg" checked>
+                    <label for="dishVeg" class="tab tab-dishVeg">Veg Dishes</label>
+                    <div class="tab-dishVeg-window grid-horizontal">
+
+                    </div>
+
+                    <input type="radio" name="main-nav-dish" id="dishBeef">
+                    <label for="dishBeef" class="tab tab-dishBeef">Beef Dishes</label>
+                    <div class="tab-dishBeef-window grid-horizontal">
+
+                    </div>
+
+                    <input type="radio" name="main-nav-dish" id="dishLamb">
+                    <label for="dishLamb" class="tab tab-dishLamb">Lamb Dishes</label>
+                    <div class="tab-dishLamb-window grid-horizontal">
+
+                    </div>
+
+                    <input type="radio" name="main-nav-dish" id="dishSea">
+                    <label for="dishSea" class="tab tab-dishSea">Sea Food Dishes</label>
+                    <div class="tab-dishSea-window grid-horizontal">
+
+                    </div>
+
+                </div>
+
+                <input type="radio" name="main-nav" id="mc">
+                <label for="mc" class="tab tab-mc">Main Course</label>
+                <div class="tab-mc-window grid-vertical">
+
+                    <input type="radio" name="main-nav-mc" id="mcBiriyani" checked>
+                    <label for="mcBiriyani" class="tab tab-mcBiriyani">Biriyani</label>
+                    <div class="tab-mcBiriyani-window grid-horizontal">
+
+                    </div>
+
+                    <input type="radio" name="main-nav-mc" id="mcTandoori">
+                    <label for="mcTandoori" class="tab tab-mcTandoori">Tandoori</label>
+                    <div class="tab-mcTandoori-window grid-horizontal">
+
+                    </div>
+
+                </div>
+
+                <input type="radio" name="main-nav" id="comp">
+                <label for="comp" class="tab tab-comp">Complimentary</label>
+                <div class="tab-comp-window grid-vertical">
+
+                    <input type="radio" name="main-nav-comp" id="compBread" checked>
+                    <label for="compBread" class="tab tab-compBread">Sides & Bread</label>
+                    <div class="tab-compBread-window grid-horizontal">
+
+                    </div>
+
+                    <input type="radio" name="main-nav-comp" id="compBev">
+                    <label for="compBev" class="tab tab-compBev">Beverages</label>
+                    <div class="tab-compBev-window grid-horizontal">
+
+                    </div>
+
+                    <input type="radio" name="main-nav-comp" id="compDes">
+                    <label for="compDes" class="tab tab-compDes">Desserts</label>
+                    <div class="tab-compDes-window grid-horizontal">
+
+                    </div>
+
+                </div>
+
+            </div>
+        </main>
+
+        <!-- About -->
+        <main class="about">
+            <div class="about-heading">
+                <svg class="icon title-icon">
+                    <use href="./asset/icons.sprite.svg#info"></use>
+                </svg>
+                <p class="about-title">About</p>
+            </div>
+            <div class="about-info">
+                <div class="about-left">
+                    <p>Lorem Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae hdarum distinctio error
+                        esse
+                        alias fugiat accusantium, officia at aut quibusdam aliquam sequi odit temporibus sit saepe
+                        facilis
+                        fuga voluptatum autem.</p>
+                    <p>Lorem Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae harum distinctio error esse
+                        alias fugiat accusantium, officia at aut quibusdam aliquam sequi odit temporibus sit saepe
+                        facilis
+                        fuga voluptatum autem.</p>
+                    <p>voluptatum autem.</p>
+                </div>
+                <div class="about-right">
+                    <p>We Value your Feedback. For More Information or to Register Any Compliants, Please Contact Us!
+                    </p>
+
+                    <div class="heading-small">Contact Information</div>
+
+                    <address>
+                        <a href="mailto:helpdesk@lotus.com">helpdesk@lotus.com</a>
+                        <br>
+                        <a href="tel:+13115552368">(311) 555-2368</a>
+                    </address>
+
+                </div>
+            </div>
+        </main>
+    </section>
+    <footer>
+        Made with <code>HTML + CSS + JS + &hearts;</code> by Athil <a href=""><svg class="icon footer-icon">
+                <use href="./asset/icons.sprite.svg#github"></use>
+            </svg></a> No
+        Rights
+        Reserved
+        |
+        2022
+    </footer>
+    <script src="./scripts/compatibility.js"></script>
+    <script src="./scripts/order.js"></script>
+
+</body>
+
+</html>
