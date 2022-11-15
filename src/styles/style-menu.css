@@ -13,9 +13,13 @@ main.menu {
     overflow: hidden;
 
     --color-aptz: 63, 72, 51;
+    --color-aptz-text: 104, 120, 84;
     --color-dish: 82, 43, 41;
+    --color-dish-text: 135, 73, 69;
     --color-mc: 117, 16, 6;
-    --color-comp: 93, 60, 24
+    --color-mc-text: 154, 26, 10;
+    --color-comp: 93, 60, 24;
+    --color-comp-text: 147, 97, 37;
 }
 
 /* SECTION Menu Heading */
@@ -111,7 +115,14 @@ main.menu>div.menu-slides {
 
 .menu-slides>input#appetizer+label,
 .menu-slides>input#appetizer label {
+    background-color: rgba(var(--color-aptz), .65);
+    color: rgb(var(--color-aptz-text));
+}
+
+.menu-slides>input#appetizer+label:hover,
+.menu-slides>input#appetizer:checked+label {
     background-color: rgba(var(--color-aptz), .85);
+    color: rgb(var(--color-text-primary));
 }
 
 /* SECTION Grid Item  */
@@ -225,11 +236,19 @@ button.item-button:hover>svg.icon-button {
 }
 
 .menu-slides>input#dish+label {
+    background-color: rgba(var(--color-dish), .65);
+    color: rgb(var(--color-dish-text));
+}
+
+.menu-slides>input#dish+label:hover,
+.menu-slides>input#dish:checked+label {
     background-color: rgba(var(--color-dish), .85);
+    color: rgb(var(--color-text-primary));
 }
 
 .menu-slides>input#dish~.tab-dish-window label {
     background-color: rgba(var(--color-dish), .25);
+    color: rgba(var(--color-dish-text), .8);
 }
 
 .grid-horizontal {
@@ -249,36 +268,20 @@ button.item-button:hover>svg.icon-button {
     width: 100%;
 }
 
-.tab-dish-window>input#dishVeg:checked~.tab-dishVeg-window {
-    display: grid;
-}
-
-.tab-dish-window>input#dishVeg:checked+label {
-    background-color: rgba(var(--color-dish), .7);
-}
-
-.tab-dish-window>input#dishBeef:checked~.tab-dishBeef-window {
-    display: grid;
-}
-
-.tab-dish-window>input#dishBeef:checked+label {
-    background-color: rgba(var(--color-dish), .7);
-}
-
-.tab-dish-window>input#dishLamb:checked~.tab-dishLamb-window {
-    display: grid;
-}
-
-.tab-dish-window>input#dishLamb:checked+label {
-    background-color: rgba(var(--color-dish), .7);
-}
-
-.tab-dish-window>input#dishSea:checked~.tab-dishSea-window {
-    display: grid;
-}
-
+.tab-dish-window>input#dishVeg:checked+label,
+.tab-dish-window>input#dishBeef:checked+label,
+.tab-dish-window>input#dishLamb:checked+label,
 .tab-dish-window>input#dishSea:checked+label {
     background-color: rgba(var(--color-dish), .7);
+    color: rgb(var(--color-text-primary));
+
+}
+
+.tab-dish-window>input#dishVeg:checked~.tab-dishVeg-window,
+.tab-dish-window>input#dishBeef:checked~.tab-dishBeef-window,
+.tab-dish-window>input#dishLamb:checked~.tab-dishLamb-window,
+.tab-dish-window>input#dishSea:checked~.tab-dishSea-window {
+    display: grid;
 }
 
 /* END !SECTION Slide Menu Dish */
@@ -293,27 +296,30 @@ button.item-button:hover>svg.icon-button {
 }
 
 .menu-slides>input#mc+label {
+    background-color: rgba(var(--color-mc), .65);
+    color: rgb(var(--color-mc-text));
+}
+
+.menu-slides>input#mc+label:hover,
+.menu-slides>input#mc:checked+label {
     background-color: rgba(var(--color-mc), .85);
+    color: rgb(var(--color-text-primary));
 }
 
 .menu-slides>input#mc~.tab-mc-window label {
     background-color: rgba(var(--color-mc), .25);
+    color: rgba(var(--color-mc-text), .8);
 }
 
-.tab-mc-window>input#mcBiriyani:checked~.tab-mcBiriyani-window {
-    display: grid;
-}
-
-.tab-mc-window>input#mcBiriyani:checked+label {
-    background-color: rgba(var(--color-mc), .7);
-}
-
-.tab-mc-window>input#mcTandoori:checked~.tab-mcTandoori-window {
-    display: grid;
-}
-
+.tab-mc-window>input#mcBiriyani:checked+label,
 .tab-mc-window>input#mcTandoori:checked+label {
     background-color: rgba(var(--color-mc), .7);
+    color: rgb(var(--color-text-primary));
+}
+
+.tab-mc-window>input#mcBiriyani:checked~.tab-mcBiriyani-window,
+.tab-mc-window>input#mcTandoori:checked~.tab-mcTandoori-window {
+    display: grid;
 }
 
 
@@ -329,35 +335,32 @@ button.item-button:hover>svg.icon-button {
 }
 
 .menu-slides>input#comp+label {
+    background-color: rgba(var(--color-comp), .65);
+    color: rgb(var(--color-comp-text));
+}
+
+.menu-slides>input#comp+label:hover,
+.menu-slides>input#comp:checked+label {
     background-color: rgba(var(--color-comp), .85);
+    color: rgb(var(--color-text-primary));
 }
 
 .menu-slides>input#comp~.tab-comp-window label {
     background-color: rgba(var(--color-comp), .25);
+    color: rgba(var(--color-comp-text), .7);
 }
 
-.tab-comp-window>input#compBread:checked~.tab-compBread-window {
-    display: grid;
-}
-
-.tab-comp-window>input#compBread:checked+label {
-    background-color: rgba(var(--color-comp), .7);
-}
-
-.tab-comp-window>input#compBev:checked~.tab-compBev-window {
-    display: grid;
-}
-
-.tab-comp-window>input#compBev:checked+label {
-    background-color: rgba(var(--color-comp), .7);
-}
-
-.tab-comp-window>input#compDes:checked~.tab-compDes-window {
-    display: grid;
-}
-
+.tab-comp-window>input#compBread:checked+label,
+.tab-comp-window>input#compBev:checked+label,
 .tab-comp-window>input#compDes:checked+label {
     background-color: rgba(var(--color-comp), .7);
+    color: rgb(var(--color-text-primary));
+}
+
+.tab-comp-window>input#compBread:checked~.tab-compBread-window,
+.tab-comp-window>input#compBev:checked~.tab-compBev-window,
+.tab-comp-window>input#compDes:checked~.tab-compDes-window {
+    display: grid;
 }
 
 /* END !SECTION Slide Menu Comp */
