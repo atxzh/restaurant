@@ -8,7 +8,8 @@
     "start": "webpack --progress --mode=production",
     "build": "webpack",
     "watch": "webpack --progress --watch",
-    "serve": "webpack-dev-server --open"
+    "serve": "webpack-dev-server --open",
+    "gh-deploy" : "git subtree push --prefix dist origin gh-pages --squash"
   },
   "repository": {
     "type": "git",
